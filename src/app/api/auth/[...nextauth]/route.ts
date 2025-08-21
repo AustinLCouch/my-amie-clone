@@ -1,4 +1,3 @@
-
 // File: app/api/auth/[...nextauth]/route.ts
 // Author: Austin Couch
 // Program Description:
