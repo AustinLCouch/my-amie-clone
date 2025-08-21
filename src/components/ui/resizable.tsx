@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useCallback, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface ResizablePanelGroupProps {
   direction: 'horizontal' | 'vertical';
