@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { auth } from "../../auth";
 import AuthButton from "./components/AuthButton";
 import { AppLayout } from "./components/AppLayout";
@@ -16,8 +17,13 @@ import { AppLayout } from "./components/AppLayout";
 export default async function Home() {
   // Fetch the user's session on the server for optimal performance
   const session = await auth();
+=======
+import Image from "next/image";
+import AuthButton from "./components/AuthButton";
+>>>>>>> main
 
   return (
+<<<<<<< HEAD
     <main className="min-h-screen bg-background">
       {session ? (
         // Authenticated users see the full application
@@ -113,6 +119,11 @@ export default async function Home() {
           </div>
         </div>
       )}
+=======
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <h1 className="text-4xl font-bold mb-4">My Amie Clone</h1>
+      <AuthButton />
+>>>>>>> main
     </main>
   );
 }
