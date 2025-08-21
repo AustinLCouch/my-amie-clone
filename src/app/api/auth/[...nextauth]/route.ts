@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { handlers } from '../../../../../auth'
-=======
-
 // File: app/api/auth/[...nextauth]/route.ts
 // Author: Austin Couch
 // Program Description:
@@ -10,6 +6,5 @@ import { handlers } from '../../../../../auth'
 // - Exports GET and POST handlers -> automatically mapped by Next.js
 
 import { handlers } from "../../../../../auth"
->>>>>>> main
 
 export const { GET, POST } = handlers
