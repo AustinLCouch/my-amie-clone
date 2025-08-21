@@ -1,5 +1,4 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+import { auth } from "../../auth";
 import AuthButton from "./components/AuthButton";
 import { AppLayout } from "./components/AppLayout";
 
@@ -16,7 +15,7 @@ import { AppLayout } from "./components/AppLayout";
  */
 export default async function Home() {
   // Fetch the user's session on the server for optimal performance
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   return (
     <main className="min-h-screen bg-background">
