@@ -84,3 +84,9 @@ logs
 
 # Yarn Integrity file
 .yarn-integrity
+
+# --- MonoLisa font binaries (do not commit licensed files) ---
+src/app/fonts/monolisa/**/*.woff2
+src/app/fonts/monolisa/**/*.woff
+src/app/fonts/monolisa/**/*.otf
+src/app/fonts/monolisa/**/*.ttf

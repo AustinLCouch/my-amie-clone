@@ -1,16 +1,65 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "./components/Providers";
 
-const geistSans = Geist({
+// MonoLisa: load as local variable font for both normal and italic styles.
+// Bind to the existing CSS variables to avoid wider code changes.
+const monolisaSans = localFont({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  src: [
+    {
+      path: "./fonts/monolisa/monolisa-webfont-2025.8.21/woff2/0-normal.woff2",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "./fonts/monolisa/monolisa-webfont-2025.8.21/woff2/1-italic.woff2",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
+  fallback: [
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "Noto Sans",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+  ],
 });
 
-const geistMono = Geist_Mono({
+const monolisaMono = localFont({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  src: [
+    {
+      path: "./fonts/monolisa/monolisa-webfont-2025.8.21/woff2/0-normal.woff2",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "./fonts/monolisa/monolisa-webfont-2025.8.21/woff2/1-italic.woff2",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
+  fallback: [
+    "ui-monospace",
+    "SFMono-Regular",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace",
+  ],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${monolisaSans.variable} ${monolisaMono.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>

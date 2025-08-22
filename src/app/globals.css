@@ -139,11 +139,21 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-feature-settings: "liga" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures contextual;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  letter-spacing: 0;
   overflow-x: hidden;
+}
+
+/* Code contexts use the mono variable (also MonoLisa) and enable code ligatures */
+code, pre, kbd, samp {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-feature-settings: "liga" 1, "calt" 1, "clig" 1, "dlig" 1;
+  font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 }
 
 /**
